@@ -10,6 +10,8 @@ public class Ball : MonoBehaviour
     // Track whether the ball has been kicked or not
     private bool isKicked = false;
 
+    public bool IsWithPlayer = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,10 +28,13 @@ public class Ball : MonoBehaviour
             isKicked = false;
         }
 
-        // Check if the space bar is pressed and kick the ball if it is
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (IsWithPlayer)
         {
-            Kick();
+            // Check if the space bar is pressed and kick the ball if it is
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Kick();
+            }
         }
     }
 
@@ -69,6 +74,7 @@ public class Ball : MonoBehaviour
         // Apply an impulse force in the movement direction to kick the ball
         GetComponent<Rigidbody>().AddForce(direction * kickForce, ForceMode.Impulse);
         isKicked = true;
+        IsWithPlayer = false;
     }
 }
 

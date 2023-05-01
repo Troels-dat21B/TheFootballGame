@@ -42,7 +42,7 @@
 
 
 ### Sounds
-- [ ] Main menu background sound/music
+- [X] Main menu background sound/music
 - [ ] Level ambient crowd sound
 - [ ] Death sound (Thinking using the "Yep, thats me, you prob wondering how i ended up in this situation")
 - [ ] Level complete sound

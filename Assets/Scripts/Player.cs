@@ -14,6 +14,10 @@ public class Player : MonoBehaviour
     public Transform modelTrans;
     public CharacterController characterController;
 
+    [Header("Ball Placement")]
+    [Tooltip("The transform where the ball will be placed when the player has it")]
+    public Transform BallPlacement;
+
     public Camera cam;
 
     //Movement
@@ -68,6 +72,7 @@ public class Player : MonoBehaviour
     {
         spawnPoint = trans.position;
         spawnRotation = modelTrans.rotation;
+        BallPlacement = GameObject.FindGameObjectWithTag("BallPlacement").transform;
     }
 
     // Update is called once per frame
@@ -75,7 +80,7 @@ public class Player : MonoBehaviour
     {
         Movement();
         Dashing();
-        
+
     }
 
 
@@ -262,6 +267,7 @@ public class Player : MonoBehaviour
     /// touching another rigidbody/collider.
     /// </summary>
     /// <param name="other">The Collision data associated with this collision.</param>
+
     void OnCollisionEnter(Collision other)
     {
 
@@ -269,7 +275,11 @@ public class Player : MonoBehaviour
         {
             Transform otherTrans = other.gameObject.transform;
             other.gameObject.GetComponent<Ball>().IsWithPlayer = true;
-            
+            other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            other.gameObject.GetComponent<Rigidbody>().useGravity = false;
+            Debug.Log("Ball is with player");
+            other.gameObject.transform.position = BallPlacement.position;
+
         }
     }
 }

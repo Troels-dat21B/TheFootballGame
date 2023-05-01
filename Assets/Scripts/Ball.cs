@@ -10,6 +10,12 @@ public class Ball : MonoBehaviour
     // Track whether the ball has been kicked or not
     private bool isKicked = false;
 
+    //Added by Troels
+    public bool IsWithPlayer = false;
+    [Header("Ball Placement")]
+    [Tooltip("The transform where the ball will be placed when the player has it")]
+    public Transform BallPlacement;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +37,7 @@ public class Ball : MonoBehaviour
         {
             Kick();
         }
+        FollowPlayer();
     }
 
     // Called when the player collides with the ball
@@ -69,6 +76,23 @@ public class Ball : MonoBehaviour
         // Apply an impulse force in the movement direction to kick the ball
         GetComponent<Rigidbody>().AddForce(direction * kickForce, ForceMode.Impulse);
         isKicked = true;
+        
+        //Added by Troels
+        IsWithPlayer = false;
+        gameObject.GetComponent<Rigidbody>().isKinematic = false;
     }
+
+    //Added by Troels
+    //Metode til at få bolden til at være foran spilleren
+    private void FollowPlayer()
+    {
+        if (IsWithPlayer)
+        {   
+            gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            transform.position = BallPlacement.position;
+        }
+    }
+
+
 }
 

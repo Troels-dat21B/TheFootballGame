@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -256,6 +257,11 @@ public class Player : MonoBehaviour
         }
     }
 
+   public void OnCollisionEnter(Collision other){
+        if(other.gameObject.tag == "Ball"){
+            other.gameObject.GetComponent<Ball>().IsWithPlayer = true;
+        }
+    }
 
     /// <summary>
     /// OnCollisionEnter is called when this collider/rigidbody has begun

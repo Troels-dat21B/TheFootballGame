@@ -10,6 +10,8 @@ public class Ball : MonoBehaviour
     // Track whether the ball has been kicked or not
     private bool isKicked = false;
 
+    public bool IsWithPlayer = false;
+
     //Added by Troels
     public bool IsWithPlayer = false;
     [Header("Ball Placement")]
@@ -32,12 +34,15 @@ public class Ball : MonoBehaviour
             isKicked = false;
         }
 
-        // Check if the space bar is pressed and kick the ball if it is
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (IsWithPlayer)
         {
-            Kick();
-        }
+            // Check if the space bar is pressed and kick the ball if it is
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Kick();
+            }
         FollowPlayer();
+        }
     }
 
     // Called when the player collides with the ball

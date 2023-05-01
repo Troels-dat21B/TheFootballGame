@@ -20,16 +20,29 @@
 
 ### UI
 - [ ] Main menu
-    - [ ] Start game button
-    - [ ] Quit game button
+    - [ ] Start game button (With functionality)
+    - [ ] Quit game button (With functionality)
+    - [ ] Tutorial (With functionality)
+- [ ] Level Selector
+    - [ ] Level 1 button (With functionality)
+    - [ ] Level 2 button (With functionality)
+    - [ ] Level 3 button (With functionality)
+    - [ ] Level 4 button (With functionality)
+    - [ ] Level 5 button (With functionality)
+    - [ ] Level 6 button (With functionality)
+    - [ ] Level 7 button (With functionality)
+    - [ ] Level 8 button (With functionality)
+    - [ ] Level 9 button (With functionality)
+    - [ ] Level 10 button (With functionality)
+    - [ ] Back button (With functionality)
 - [ ] Pause menu
     - [ ] Quit level
     - [ ] Restart level
     - [ ] Continue level
 
+
 ### Sounds
-- [ ] Main menu background sound/music
-- [ ] Level music
+- [X] Main menu background sound/music
 - [ ] Level ambient crowd sound
 - [ ] Death sound (Thinking using the "Yep, thats me, you prob wondering how i ended up in this situation")
 - [ ] Level complete sound

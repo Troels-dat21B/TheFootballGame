@@ -10,7 +10,6 @@ public class Ball : MonoBehaviour
     // Track whether the ball has been kicked or not
     private bool isKicked = false;
 
-    public bool IsWithPlayer = false;
 
     //Added by Troels
     public bool IsWithPlayer = false;

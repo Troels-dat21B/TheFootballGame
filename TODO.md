@@ -45,7 +45,7 @@
 - [X] Main menu background sound/music
 - [X] Level ambient crowd sound
 - [X] Death sound (Thinking using the "Yep, thats me, you prob wondering how i ended up in this situation")
-- [ ] Level complete sound
+- [X] Level complete sound
 
 ### Mandatory levels
 - [ ] level 1

@@ -43,9 +43,10 @@
 
 ### Sounds
 - [X] Main menu background sound/music
-- [ ] Level ambient crowd sound
-- [ ] Death sound (Thinking using the "Yep, thats me, you prob wondering how i ended up in this situation")
-- [ ] Level complete sound
+- [X] Level ambient crowd sound
+- [X] Death sound (Thinking using the "Yep, thats me, you prob wondering how i ended up in this situation")
+- [X] Level complete sound
+- [X] Goal scored sound
 
 ### Mandatory levels
 - [ ] level 1

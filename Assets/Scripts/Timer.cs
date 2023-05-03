@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro; 
 
+
+
+//This is taken from this link: https://forum.unity.com/threads/start-timer-on-new-scene.487709/
+
 public class Timer : MonoBehaviour {
 
     public TMP_Text timerText;

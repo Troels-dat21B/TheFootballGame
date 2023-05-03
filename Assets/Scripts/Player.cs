@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -18,6 +20,8 @@ public class Player : MonoBehaviour
     [Tooltip("The transform where the ball will be placed when the player has it")]
     public Transform BallPlacement;
 
+    public AudioSource audioSource; 
+ 
     public Camera cam;
 
     //Movement
@@ -80,6 +84,10 @@ public class Player : MonoBehaviour
     {
         Movement();
         Dashing();
+        if(Input.GetKeyDown(KeyCode.T))
+        {
+            Die(); 
+        }
 
     }
 
@@ -96,6 +104,9 @@ public class Player : MonoBehaviour
             enabled = false;
             characterController.enabled = false;
             modelTrans.gameObject.SetActive(false);
+            audioSource.Play();
+            Debug.Log("die");
+
         }
 
     }
@@ -108,6 +119,7 @@ public class Player : MonoBehaviour
         characterController.enabled = true;
         modelTrans.gameObject.SetActive(true);
         modelTrans.rotation = spawnRotation;
+        
     }
 
     //Region: Movement

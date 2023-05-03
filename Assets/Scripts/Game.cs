@@ -19,7 +19,7 @@ public class Game : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene("Main Menu");
+            SceneManager.LoadScene("Level Selector");
         }
     }
 }

@@ -4,14 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Troels Test.unity
     guid: 1e1bd60924b9d924192946885a0a33a7
-  - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
-    guid: 1eccdbbb7ceda7442928276623a88b82
   - enabled: 1
     path: Assets/Scenes/Level Selector.unity
     guid: a2540ed65282b3646a4294a46c1a19b9

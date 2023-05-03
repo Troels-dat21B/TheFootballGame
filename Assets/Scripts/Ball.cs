@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     // Set the force to apply when the ball is kicked
-    public float kickForce = 100f;
+    public float kickForce = 200f;
 
     //Added by Troels
     public bool IsWithPlayer = false;

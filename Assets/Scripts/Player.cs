@@ -273,13 +273,11 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.tag == "Ball")
         {
-            Transform otherTrans = other.gameObject.transform;
             other.gameObject.GetComponent<Ball>().IsWithPlayer = true;
-            other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            //other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
             other.gameObject.GetComponent<Rigidbody>().useGravity = false;
             Debug.Log("Ball is with player");
-            other.gameObject.transform.position = BallPlacement.position;
-
+            //other.gameObject.transform.position = BallPlacement.position;
         }
     }
 }

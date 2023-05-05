@@ -22,4 +22,9 @@ public class Game : MonoBehaviour
             SceneManager.LoadScene("Level Selector");
         }
     }
+
+    public void LevelSelector()
+    {
+        SceneManager.LoadScene("Level Selector");
+    }
 }

@@ -29,6 +29,8 @@ public class Ball : MonoBehaviour
         if (IsWithPlayer)
         {
 
+            //Deaktiverer boldens collider når den er med spilleren
+            gameObject.GetComponent<SphereCollider>().enabled = false;
             
             transform.position = ballPlacement.position;
             // Check if the space bar is pressed and kick the ball if it is
@@ -46,10 +48,15 @@ public class Ball : MonoBehaviour
     private void Kick()
     {
         //Added by Troels
+        //Componenter der skal ændres når bolden sparkes
         IsWithPlayer = false;
         GetComponent<Rigidbody>().WakeUp();
         gameObject.GetComponent<Rigidbody>().isKinematic = false;
         gameObject.GetComponent<Rigidbody>().useGravity = true;
+
+        //Til at give delay på metode kaldet
+        Invoke("ActivateCollider", 0.15f);
+
         // Calculate the movement direction based on the arrow keys
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
@@ -60,6 +67,14 @@ public class Ball : MonoBehaviour
 
 
 
+    }
+
+    //Troels-
+    //Metode til at aktivere boldens collider igen. Denne metode bliver kaldt med Invoke i Kick metoden
+    //For at give et delay på 0.15 sekunder så spiller og bold ikke kolliderer med det samme igen
+    void ActivateCollider()
+    {
+        gameObject.GetComponent<SphereCollider>().enabled = true;
     }
 
 

@@ -19,8 +19,8 @@ public class Player : MonoBehaviour
     [Tooltip("The transform where the ball will be placed when the player has it")]
     public Transform BallPlacement;
 
-    public AudioSource audioSource; 
- 
+    public AudioSource audioSource;
+
     public Camera cam;
 
     //Movement
@@ -83,9 +83,9 @@ public class Player : MonoBehaviour
     {
         Movement();
         Dashing();
-        if(Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.T))
         {
-            Die(); 
+            Die();
         }
 
     }
@@ -118,7 +118,7 @@ public class Player : MonoBehaviour
         characterController.enabled = true;
         modelTrans.gameObject.SetActive(true);
         modelTrans.rotation = spawnRotation;
-        
+
     }
 
     //Region: Movement
@@ -279,7 +279,7 @@ public class Player : MonoBehaviour
     /// </summary>
     /// <param name="other">The Collision data associated with this collision.</param>
 
-    void OnCollisionEnter(Collision other)
+/*     void OnCollisionEnter(Collision other)
     {
 
         if (other.gameObject.tag == "Ball")
@@ -289,6 +289,23 @@ public class Player : MonoBehaviour
             other.gameObject.GetComponent<Rigidbody>().useGravity = false;
             Debug.Log("Ball is with player");
             //other.gameObject.transform.position = BallPlacement.position;
+        }
+    } */
+
+    /// <summary>
+    /// OnControllerColliderHit is called when the controller hits a
+    /// collider while performing a Move.
+    /// </summary>
+    /// <param name="hit">The ControllerColliderHit data associated with this collision.</param>
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.tag == "Ball")
+        {
+            hit.gameObject.GetComponent<Ball>().IsWithPlayer = true;
+            //hit.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            hit.gameObject.GetComponent<Rigidbody>().useGravity = false;
+            Debug.Log("Ball is with player");
+            //hit.gameObject.transform.position = BallPlacement.position;
         }
     }
 }

@@ -14,14 +14,14 @@
 - [ ] Player
 - [ ] Ball
 - [ ] Camera
-- [ ] "Game" (Pause, tid, UI)
+- [X] "Game" (Pause, tid, UI)
 - [ ] Opponents
 - [ ] Goalie
 
 ### UI
-- [ ] Main menu
-    - [ ] Start game button (With functionality)
-    - [ ] Quit game button (With functionality)
+- [X] Main menu
+    - [X] Start game button (With functionality)
+    - [X] Quit game button (With functionality)
     - [ ] Tutorial (With functionality)
 - [ ] Level Selector
     - [ ] Level 1 button (With functionality)
@@ -34,11 +34,10 @@
     - [ ] Level 8 button (With functionality)
     - [ ] Level 9 button (With functionality)
     - [ ] Level 10 button (With functionality)
-    - [ ] Back button (With functionality)
-- [ ] Pause menu
-    - [ ] Quit level
-    - [ ] Restart level
-    - [ ] Continue level
+    - [X] Back button (With functionality)
+- [X] Pause menu
+    - [X] Quit level
+    - [X] Continue level
 
 
 ### Sounds

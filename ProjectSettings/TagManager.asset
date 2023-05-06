@@ -8,6 +8,7 @@ TagManager:
   - Field
   - BallPlacement
   - Goal
+  - Opponent
   layers:
   - Default
   - TransparentFX

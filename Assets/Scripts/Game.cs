@@ -8,6 +8,15 @@ public class Game : MonoBehaviour
 {
     public AudioSource audioSource;
 
+
+
+    /// <summary>
+    /// Awake is called when the script instance is being loaded.
+    /// </summary>
+    void Awake()
+    {
+        Time.timeScale = 1f;
+    }
     // Start is called before the first frame update
     void Start()
     {

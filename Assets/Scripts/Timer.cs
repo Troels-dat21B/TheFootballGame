@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; 
+using TMPro;
+using UnityEngine.SceneManagement;
 
 
 
@@ -16,9 +17,24 @@ public class Timer : MonoBehaviour {
     string seconds;
     float t;
 
+
+    /// <summary>
+    /// Awake is called when the script instance is being loaded.
+    /// </summary>
+    void Awake()
+    {
+        timerText.text = Time.time.ToString();
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        startTime = Time.time;
+    }
+
 	// Use this for initialization
 	void Start () {      
         startTime = Time.time;
+        
 	}
 	
 	// Update is called once per frame

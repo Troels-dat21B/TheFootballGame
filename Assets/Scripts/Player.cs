@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Unity.VisualScripting;
+using UnityEditor.EditorTools;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -27,6 +28,9 @@ public class Player : MonoBehaviour
     [Header("Movement")]
     [Tooltip("Units moved pr. second at max speed")]
     public float moveSpeed = 24;    //Movement speed
+
+    [Tooltip("Extra units moved pr. second when sprinting")]
+    public float sprintSpeed = 8;    //Sprint speed
 
     [Tooltip("Time in seconds it takes to reach max speed")]
     public float timeToMaxSpeed = .26f;    //Acceleration time
@@ -76,18 +80,27 @@ public class Player : MonoBehaviour
         spawnPoint = trans.position;
         spawnRotation = modelTrans.rotation;
         BallPlacement = GameObject.FindGameObjectWithTag("BallPlacement").transform;
+        Debug.Log("Got loaded");
     }
 
     // Update is called once per frame
     void Update()
     {
         Movement();
-        Dashing();
+        // Dashing();
+        SpeedUp();
         if (Input.GetKeyDown(KeyCode.T))
         {
             Die();
         }
 
+    }
+
+    void FixedUpdate()
+    {
+        if(!BallPlacement){
+            Die();
+        }
     }
 
 
@@ -273,7 +286,19 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void SpeedUp()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
 
+            moveSpeed = moveSpeed + sprintSpeed;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+
+            moveSpeed = moveSpeed - sprintSpeed;
+        }
+    }
 
     /// <summary>
     /// OnControllerColliderHit is called when the controller hits a

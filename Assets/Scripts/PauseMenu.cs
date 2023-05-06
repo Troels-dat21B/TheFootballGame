@@ -41,7 +41,7 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = true;
     }
 
-        public void LoadMenu()
+    public void LoadMenu()
     {
         SceneManager.LoadScene("Level Selector");
 

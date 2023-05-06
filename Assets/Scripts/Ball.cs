@@ -5,10 +5,14 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     // Set the force to apply when the ball is kicked
-    public float kickForce = 200f;
+    public float kickForce;
+
 
     //Added by Troels
     public bool IsWithPlayer = false;
+
+    [Tooltip("Delay on the collider being activated again after the ball is kicked")]
+    public float delay = 0.15f;
 
     [Tooltip("The position where the ball is placed when it is with the player")]
     public Transform ballPlacement;
@@ -55,7 +59,7 @@ public class Ball : MonoBehaviour
         gameObject.GetComponent<Rigidbody>().useGravity = true;
 
         //Til at give delay på metode kaldet
-        Invoke("ActivateCollider", 0.15f);
+        Invoke("ActivateCollider", delay);
 
         // Calculate the movement direction based on the arrow keys
         float horizontal = Input.GetAxis("Horizontal");

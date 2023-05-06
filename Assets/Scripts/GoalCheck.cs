@@ -24,15 +24,19 @@ public class GoalCheck : MonoBehaviour
         {
             Debug.Log("GOOOOOOOAAAAAAAALLLLLLL!!!!!!!");
             Cheering.Play();
-            Invoke("LevelComplete", 2f);
+            Invoke("Goal", 2f);
 
         }
     }
 
 
-    void LevelComplete()
+    void Goal()
     {
+        string levelName = SceneManager.GetActiveScene().name;
+
+        int level = int.Parse(levelName.Substring(6)) - 1;
         SceneManager.LoadScene("Level Selector");
+
     }
 
 

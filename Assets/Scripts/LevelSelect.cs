@@ -32,7 +32,7 @@ public class LevelSelect : MonoBehaviour
     }
 
     
-    [Tooltip("Load the level with the given index.")]
+    
     public void LoadLevel(int level)
     {
         if(level > 0 && !LevelCompletionStatus[level - 1])

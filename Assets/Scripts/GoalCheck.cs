@@ -7,12 +7,21 @@ public class GoalCheck : MonoBehaviour
 {
     public AudioSource Cheering;
 
+    private Opponents[] opponents;
+
+    private Goalie goalie;
+
     // Update is called once per frame
     void Update()
     {
 
     }
 
+    void Start()
+    {
+        opponents = FindObjectsOfType<Opponents>();
+        goalie = FindObjectOfType<Goalie>();
+    }
 
     /// <summary>
     /// OnTriggerEnter is called when the Collider other enters the trigger.
@@ -22,6 +31,11 @@ public class GoalCheck : MonoBehaviour
     {
         if (other.gameObject.tag == "Ball")
         {
+            Destroy(goalie.gameObject);
+            foreach (Opponents opponent in opponents)
+            {
+                Destroy(opponent.gameObject);
+            }
             Debug.Log("GOOOOOOOAAAAAAAALLLLLLL!!!!!!!");
             Cheering.Play();
             Invoke("Goal", 2f);

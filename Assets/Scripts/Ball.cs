@@ -36,16 +36,27 @@ public class Ball : MonoBehaviour
             //Deaktiverer boldens collider når den er med spilleren
             gameObject.GetComponent<SphereCollider>().enabled = false;
 
-            transform.position = ballPlacement.position;
+            //To prevent the game from chrashing, when the player object gets destroyed
+            if (!ballPlacement)
+            {
+                return;
+            }
+            else
+            {
+                transform.position = ballPlacement.position;
+
+            }
+
             // Check if the space bar is pressed and kick the ball if it is
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Space) && Input.GetKeyDown(KeyCode.LeftShift))
             {
                 Kick();
             }
 
         }
-    }
 
+
+    }
 
 
 

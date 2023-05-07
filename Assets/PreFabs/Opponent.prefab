@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5103797283640875475}
   - component: {fileID: 3784182615781140511}
   - component: {fileID: 5099051384012847933}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 6366170733065833213}
   - component: {fileID: 3952568991837102792}
   - component: {fileID: 2914560983705840546}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Opponent
   m_TagString: Opponent
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3681029079445814634}
   - component: {fileID: 2841159648175127212}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sense
   m_TagString: Untagged
   m_Icon: {fileID: 0}

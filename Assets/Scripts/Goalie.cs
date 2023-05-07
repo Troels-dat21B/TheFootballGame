@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.EditorTools;
 using UnityEngine;
 using UnityEngine.Animations;
 
@@ -10,7 +11,15 @@ public class Goalie : MonoBehaviour
     //Troels
     // Tutorial for this script: https://www.youtube.com/watch?v=4Wh22ynlLyk
     //Made changes to fit our needs
-    public float moveSpeed = 5f;
+
+    [Header("Movement")]
+    [Tooltip("The speed at which the goalie moves")]
+    public float moveSpeed = 325f;
+
+    [Tooltip("The speed at which the goalie moves when the ball is inside the goal area")]
+    public float inSideMoveSpeed = 40f;
+
+    [Header("References")]
     Rigidbody rb;
 
     Transform target;
@@ -55,13 +64,21 @@ public class Goalie : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ball"))
+        if (collision.gameObject.CompareTag("Ball") || collision.gameObject.CompareTag("Player"))
         {
             Destroy(collision.gameObject);
-            
+
         }
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            moveSpeed = inSideMoveSpeed;
+        }
+    }
 
 
 }

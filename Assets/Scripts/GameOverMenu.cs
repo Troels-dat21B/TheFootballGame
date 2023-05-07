@@ -19,7 +19,7 @@ public class GameOverMenu : MonoBehaviour
     void Awake()
     {
         currentSceneName = SceneManager.GetActiveScene().name;
-        ball = GameObject.Find("Ball");
+        ball = GameObject.FindWithTag("Ball");
         player = GameObject.Find("Player");
         gameOverMenuUI.SetActive(false);
     }
@@ -29,9 +29,14 @@ public class GameOverMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!ball || !player)
+        if (!player)
         {
-            
+            Debug.Log("Could not find Player");
+            GameOver();
+        }
+        if(!ball)
+        {
+            Debug.Log("Could not find Ball");
             GameOver();
         }
 

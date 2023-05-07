@@ -9,6 +9,7 @@ TagManager:
   - BallPlacement
   - Goal
   - Opponent
+  - Peer Body
   layers:
   - Default
   - TransparentFX

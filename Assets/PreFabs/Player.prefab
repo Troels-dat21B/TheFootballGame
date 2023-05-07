@@ -125,7 +125,8 @@ MonoBehaviour:
   BallPlacement: {fileID: 5356615172216721026}
   audioSource: {fileID: 5356615171746430550}
   cam: {fileID: 0}
-  moveSpeed: 24
+  moveSpeed: 35
+  sprintSpeed: 15
   timeToMaxSpeed: 0.26
   timeToLooseMaxSpeed: 0.2
   reverseMomentumMultiplier: 2.2

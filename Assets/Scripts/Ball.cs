@@ -18,6 +18,10 @@ public class Ball : MonoBehaviour
     public Transform ballPlacement;
 
 
+    void Awake(){
+        ballPlacement = GameObject.Find("BallPlacement").transform;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

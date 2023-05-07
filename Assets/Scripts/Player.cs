@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     //Movement
     [Header("Movement")]
     [Tooltip("Units moved pr. second at max speed")]
-    public float moveSpeed = 24;    //Movement speed
+    public float moveSpeed = 35;    //Movement speed
 
     [Tooltip("Extra units moved pr. second when sprinting")]
     public float sprintSpeed = 8;    //Sprint speed

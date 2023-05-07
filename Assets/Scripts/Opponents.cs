@@ -9,7 +9,7 @@ public class Opponents : MonoBehaviour
     //Troels
     // Tutorial for this script: https://www.youtube.com/watch?v=4Wh22ynlLyk
     //Made changes to fit our needs
-    public float moveSpeed = 5f;
+    public float moveSpeed = 30f;
     Rigidbody rb;
 
     Transform target;

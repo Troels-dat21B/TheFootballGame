@@ -65,7 +65,8 @@ public class LevelSelect : MonoBehaviour
             }
         }
 
-        //ChatGPT metode til at sortere navnene, da CompareTo ikke kan sortere på white spces og tal
+        //Troels
+        //ChatGPT metode til at sortere navnene, da CompareTo ikke kan sortere på white spaces og tal
         LevelButtons.Sort((a, b) =>
         {
             // Split the button names into an array of strings

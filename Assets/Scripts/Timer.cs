@@ -9,7 +9,8 @@ using UnityEngine.SceneManagement;
 
 //This is taken from this link: https://forum.unity.com/threads/start-timer-on-new-scene.487709/
 
-public class Timer : MonoBehaviour {
+public class Timer : MonoBehaviour
+{
 
     public TMP_Text timerText;
     float startTime;
@@ -31,14 +32,16 @@ public class Timer : MonoBehaviour {
         startTime = Time.time;
     }
 
-	// Use this for initialization
-	void Start () {      
-        startTime = Time.time;
-        
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    // Use this for initialization
+    void Start()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         if (finished)
             return;
 
@@ -47,7 +50,7 @@ public class Timer : MonoBehaviour {
         seconds = (t % 60).ToString("f2");
 
         timerText.text = seconds;
-	}
+    }
 
     public void Finish()
     {
@@ -61,7 +64,7 @@ public class Timer : MonoBehaviour {
             finished = true;
             timerText.color = Color.red;
         }
-        else if(t < 5.00f)
+        else if (t < 5.00f)
         {
             finished = true;
             timerText.color = Color.red;

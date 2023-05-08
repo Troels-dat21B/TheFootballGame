@@ -13,6 +13,8 @@ public class GoalCheck : MonoBehaviour
 
     private LevelSelect levelSelect;
 
+    private LevelCompleteMenu levelCompleteMenu;
+
     // Update is called once per frame
     void Update()
     {
@@ -24,6 +26,7 @@ public class GoalCheck : MonoBehaviour
         opponents = FindObjectsOfType<Opponents>();
         goalie = FindObjectOfType<Goalie>();
         levelSelect = FindObjectOfType<LevelSelect>();
+        levelCompleteMenu = FindObjectOfType<LevelCompleteMenu>();
     }
 
     /// <summary>
@@ -49,12 +52,13 @@ public class GoalCheck : MonoBehaviour
 
     void Goal()
     {
-        string levelName = SceneManager.GetActiveScene().name;
+/*         string levelName = SceneManager.GetActiveScene().name;
 
         int level = int.Parse(levelName.Substring(6)) - 1;
 
-        levelSelect.LevelComplete(level);
-        SceneManager.LoadScene("Level Selector");
+        levelSelect.LevelComplete(level); */
+        
+        levelCompleteMenu.LevelComplete();
 
     }
 

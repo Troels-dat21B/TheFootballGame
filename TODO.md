@@ -11,12 +11,12 @@
 - Make sure the pitch is bound, so the player cannot run outside the pitch
 
 ### Scripts
-- [ ] Player
-- [ ] Ball
-- [ ] Camera
+- [X] Player
+- [X] Ball
+- [X] Camera
 - [X] "Game" (Pause, tid, UI)
-- [ ] Opponents
-- [ ] Goalie
+- [X] Opponents
+- [X] Goalie
 
 ### UI
 - [X] Main menu
@@ -48,9 +48,9 @@
 - [X] Goal scored sound
 
 ### Mandatory levels
-- [ ] level 1
-- [ ] level 2
-- [ ] level 3
+- [X] level 1
+- [X] level 2
+- [X] level 3
 
 ### Known features (See discriptions for each features furter down)
 

@@ -18,7 +18,8 @@ public class Ball : MonoBehaviour
     public Transform ballPlacement;
 
 
-    void Awake(){
+    void Awake()
+    {
         ballPlacement = GameObject.Find("BallPlacement").transform;
     }
 
@@ -98,7 +99,14 @@ public class Ball : MonoBehaviour
         gameObject.GetComponent<SphereCollider>().enabled = true;
     }
 
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Wall")
+        {
+            Destroy(gameObject);
 
+        }
+    }
 
 }
 

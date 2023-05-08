@@ -10,6 +10,7 @@ TagManager:
   - Goal
   - Opponent
   - Peer Body
+  - Wall
   layers:
   - Default
   - TransparentFX

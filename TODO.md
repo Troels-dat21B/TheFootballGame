@@ -23,17 +23,17 @@
     - [X] Start game button (With functionality)
     - [X] Quit game button (With functionality)
     - [ ] Tutorial (With functionality)
-- [ ] Level Selector
-    - [ ] Level 1 button (With functionality)
-    - [ ] Level 2 button (With functionality)
-    - [ ] Level 3 button (With functionality)
-    - [ ] Level 4 button (With functionality)
-    - [ ] Level 5 button (With functionality)
-    - [ ] Level 6 button (With functionality)
-    - [ ] Level 7 button (With functionality)
-    - [ ] Level 8 button (With functionality)
-    - [ ] Level 9 button (With functionality)
-    - [ ] Level 10 button (With functionality)
+- [X] Level Selector
+    - [X] Level 1 button (With functionality)
+    - [X] Level 2 button (With functionality)
+    - [X] Level 3 button (With functionality)
+    - [X] Level 4 button (With functionality)
+    - [X] Level 5 button (With functionality)
+    - [X] Level 6 button (With functionality)
+    - [X] Level 7 button (With functionality)
+    - [X] Level 8 button (With functionality)
+    - [X] Level 9 button (With functionality)
+    - [X] Level 10 button (With functionality)
     - [X] Back button (With functionality)
 - [X] Pause menu
     - [X] Quit level
@@ -54,7 +54,7 @@
 
 ### Known features (See discriptions for each features furter down)
 
-- [ ] The Story line
+- [X] The Story line
 - [ ] The Streaker
 - [ ] The Multiplayer game (multiple controlled characters for singleplayer)
 - [ ] Multiple camera angles

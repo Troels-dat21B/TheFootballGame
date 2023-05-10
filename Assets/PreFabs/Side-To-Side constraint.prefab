@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8759876838748996649}
   - component: {fileID: 2349337681863378780}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Side-To-Side constraint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

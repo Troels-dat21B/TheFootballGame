@@ -3,3 +3,9 @@
 ### Det er muligt at slå level 6 "Outside goal"
 ### De første 5 levels kan føles repeterende. level 6-10 er tematiske
 ### God fornøjelse
+
+## Controls
+### WASD to move
+### Left Shift to sprint
+### Spacebar to kick
+### Escape to open and close pause menu

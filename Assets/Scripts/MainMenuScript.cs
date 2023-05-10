@@ -4,7 +4,19 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
-{
+{   
+
+    public GameObject TutorilaUI;
+    public GameObject SettingsMenuUI;
+    public GameObject MainMenuUI;
+    
+    void Start()
+    {
+        TutorilaUI.SetActive(false);
+        SettingsMenuUI.SetActive(false);
+        MainMenuUI.SetActive(true);
+    }
+
     public void StartGame()
     {
         SceneManager.LoadScene("Level Selector");
@@ -24,5 +36,23 @@ public class MainMenuScript : MonoBehaviour
             UnityEditor.EditorApplication.isPlaying = false;
         #endif
 
+    }
+
+    public void Settings()
+    {
+        SettingsMenuUI.SetActive(true);
+        MainMenuUI.SetActive(false);
+    }
+
+    public void Tutorial()
+    {
+        TutorilaUI.SetActive(true);
+        MainMenuUI.SetActive(false);
+    }
+
+    public void Back(){
+        SettingsMenuUI.SetActive(false);
+        TutorilaUI.SetActive(false);
+        MainMenuUI.SetActive(true);
     }
 }

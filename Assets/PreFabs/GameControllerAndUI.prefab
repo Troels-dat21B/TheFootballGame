@@ -1845,6 +1845,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 4824712518763973837}
   Whistle: {fileID: 6137127234131939248}
+  streaker: {fileID: 3101622870679312067, guid: 522fb22e2f501ee48b3781cdb765fd03, type: 3}
 --- !u!82 &4824712518763973837
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1953,7 +1954,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3a65e9ffc1c490d4ab38337aa7d31a83, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0

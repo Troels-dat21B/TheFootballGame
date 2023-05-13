@@ -86,18 +86,15 @@ public class Player : MonoBehaviour
     void Update()
     {
         Movement();
-        // Dashing();
         SpeedUp();
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            Die();
-        }
+
 
     }
 
     void FixedUpdate()
     {
-        if(!BallPlacement){
+        if (!BallPlacement)
+        {
             Die();
         }
     }
@@ -116,7 +113,6 @@ public class Player : MonoBehaviour
             characterController.enabled = false;
             modelTrans.gameObject.SetActive(false);
             audioSource.Play();
-            Debug.Log("die");
 
         }
 
@@ -242,48 +238,6 @@ public class Player : MonoBehaviour
 
     }
 
-    //Region: Dash
-    private void Dashing()
-    {
-        if (!IsDashing)
-        {
-            if (Input.GetKeyDown(KeyCode.LeftShift) && CanDash)
-            {
-                //Find the direction the player is holding with the movement keys
-                Vector3 movementDir = Vector3.zero;
-
-                if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
-                {
-                    movementDir.z = 1;
-                }
-                else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
-                {
-                    movementDir.z = -1;
-                }
-                if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-                {
-                    movementDir.x = 1;
-                }
-                else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-                {
-                    movementDir.x = -1;
-                }
-                //If at least one movement key was held
-                if (movementDir.x != 0 || movementDir.z != 0)
-                {
-                    //Start dashing
-                    dashDirection = movementDir;
-                    dashBeginTime = Time.time;
-                    movementVelocity = dashDirection * moveSpeed;
-                    modelTrans.forward = dashDirection;
-                }
-            }
-        }
-        else
-        {
-            characterController.Move(dashDirection * (dashDistance / dashTime) * Time.deltaTime);
-        }
-    }
 
     private void SpeedUp()
     {

@@ -45,20 +45,16 @@ public class TribunePeers : MonoBehaviour
         {
 
             Material material = materials[Random.Range(0, materials.Count)];
-            Debug.Log(material.name);
             return material;
         }
     }
 
     void LoadMaterialsFromFolder()
     {
-        Debug.Log("Loading materials from folder");
         Object[] obj = Resources.LoadAll(folderPath, typeof(Material));
-        Debug.Log("Found " + obj.Length + " materials");
         foreach (Object o in obj)
         {
             materials.Add((Material)o);
-            Debug.Log(o.name);
         }
     }
 

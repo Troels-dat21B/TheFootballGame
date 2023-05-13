@@ -1,15 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class Opponents : MonoBehaviour
+public class Streaker : MonoBehaviour
 {
-    //Troels
-    // Tutorial for this script: https://www.youtube.com/watch?v=4Wh22ynlLyk
-    //Made changes to fit our needs
-    public float moveSpeed = 30f;
+
+    public float moveSpeed = 60f;
     Rigidbody rb;
 
     Transform target;
@@ -19,12 +16,11 @@ public class Opponents : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        rb.isKinematic = true;
     }
 
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Ball").transform;
+        target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
 
@@ -40,7 +36,9 @@ public class Opponents : MonoBehaviour
         }
     }
 
-
+    /// <summary>
+    /// This function is called every fixed framerate frame, if the MonoBehaviour is enabled.
+    /// </summary>
     void FixedUpdate()
     {
         if (target)
@@ -49,15 +47,6 @@ public class Opponents : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Ball") || other.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Ball is in the trigger");
-            rb.isKinematic = false;
-
-        }
-    }
 
     void OnCollisionEnter(Collision collision)
     {
@@ -67,5 +56,4 @@ public class Opponents : MonoBehaviour
 
         }
     }
-
 }

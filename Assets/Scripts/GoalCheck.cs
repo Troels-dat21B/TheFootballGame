@@ -15,11 +15,7 @@ public class GoalCheck : MonoBehaviour
 
     private LevelCompleteMenu levelCompleteMenu;
 
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
 
     void Start()
     {
@@ -42,7 +38,6 @@ public class GoalCheck : MonoBehaviour
             {
                 Destroy(opponent.gameObject);
             }
-            Debug.Log("GOOOOOOOAAAAAAAALLLLLLL!!!!!!!");
             Cheering.Play();
             Invoke("Goal", 2f);
 
@@ -52,14 +47,7 @@ public class GoalCheck : MonoBehaviour
 
     void Goal()
     {
-/*         string levelName = SceneManager.GetActiveScene().name;
-
-        int level = int.Parse(levelName.Substring(6)) - 1;
-
-        levelSelect.LevelComplete(level); */
-        
         levelCompleteMenu.LevelComplete();
-
     }
 
 

@@ -11,6 +11,12 @@ public class Game : MonoBehaviour
     [SerializeField]
     private AudioSource Whistle;
 
+    [SerializeField]
+    private GameObject streaker;
+
+    private Transform streakerTransformSpawnPos;
+
+    private GameObject player;
 
 
     /// <summary>
@@ -40,16 +46,31 @@ public class Game : MonoBehaviour
                 if (clip.name == "Whistle")
                 {
                     Whistle.clip = clip;
-                    
+
                 }
             }
         }
+        player = GameObject.Find("Player");
+        streakerTransformSpawnPos = GameObject.Find("StreakerSpawnPos").transform;
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        int randomStreaker = Random.Range(1, 10);
+
         
+        //If randomStreaker er 10, så skal den instantiate en streaker.
+        //Streaker Z rotation vendes mod Player, og løber lige ud
+        if (randomStreaker == 10)
+        {
+            Instantiate(streaker, streakerTransformSpawnPos.position + new Vector3(0, 7.5f, 0), Quaternion.Euler(0, 0, 0));
+        }
+        else
+        {
+            return;
+        }
+
         audioSource.Play();
 
         //Note til Niels, Fra Troels: Er det muligt at lave den samme logik på en "bedre" måde?
